@@ -17,7 +17,7 @@ Inspired by modern color selection tools, it aims to fit seamlessly into various
 *   Customizable initial color.
 *   Rounded corner styling options.
 
-![alt text](https://github.com/brayflex/compact_color_picker/blob/main/assets/compact_color_picker.gif "Compact Color Picker in Action")
+<img src="https://raw.githubusercontent.com/brayflex/compact_color_picker/main/assets/compact_color_picker.gif" alt="Compact Color Picker in Action">
 
 ## 🧑‍🎨️ Getting Started
 
@@ -98,8 +98,7 @@ class _MyColorSelectorState extends State<MyColorSelector> {
   }
 }
 ```
-
-![alt text](https://github.com/brayflex/compact_color_picker/blob/main/assets/compact_color_picker.png "Compact Color Picker Values")
+<img src="https://raw.githubusercontent.com/brayflex/compact_color_picker/main/assets/compact_color_picker.png" alt="Compact Color Picker Values">
 
 ## 🌈 Accessing Color Values
 
