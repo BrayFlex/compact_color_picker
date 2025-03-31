@@ -1,6 +1,6 @@
 name: compact_color_picker
 description: A simple & clean color picker widget for Flutter. Designed to be compact (mobile-first) yet powerful, suitable for all platforms! It provides a user-friendly interface for selecting colors via Hue, Saturation, Lightness, and Opacity controls.
-version: 1.0.0 # Updated version
+version: 1.0.1 # Updated version
 homepage: https://github.com/BrayFlex/compact_color_picker # Assuming this is the repo URL
 repository: https://github.com/BrayFlex/compact_color_picker # Add repository URL
 

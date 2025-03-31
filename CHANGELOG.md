@@ -1,3 +1,7 @@
+## 1.0.1
+
+*   **Docs** Updated the documentation with images and improved missing descriptions. 🦜
+
 ## 1.0.0
 
 *   **BREAKING:** Made `initialColor` optional in `ColorPicker`, defaulting to `Color(0xFFF3C50B)`.
