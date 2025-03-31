@@ -1,4 +1,4 @@
-# 🎨 Compact Color Picker
+# 🦜 Compact Color Picker
 
 [![pub package](https://img.shields.io/pub/v/compact_color_picker.svg)](https://pub.dev/packages/compact_color_picker)
 
@@ -39,7 +39,7 @@ Inspired by modern color selection tools, it aims to fit seamlessly into various
     import 'package:compact_color_picker/compact_color_picker.dart';
     ```
 
-## 🦜 Usage
+## 🎨 Usage
 
 Use the `ColorPicker` widget in your Flutter application. Provide an optional `initialColor` and an `onColorChanged` callback to receive updates.
 
