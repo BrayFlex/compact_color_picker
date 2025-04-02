@@ -6,11 +6,11 @@ extension CompactColorPickerColorUtils on Color {
   ///
   /// Example: `Colors.red.toHex()` returns `'FF0000'`.
   String toHex() {
-    // Construct hex string from R, G, B components using .red, .green, .blue
-    final String r = red.toRadixString(16).padLeft(2, '0');
-    final String g = green.toRadixString(16).padLeft(2, '0');
-    final String b = blue.toRadixString(16).padLeft(2, '0');
-    return '$r$g$b'.toUpperCase();
+    // Construct hex string from R, G, B components using .r, .g, .b
+    final String rStr = (r * 255).toInt().toRadixString(16).padLeft(2, '0');
+    final String gStr = (g * 255).toInt().toRadixString(16).padLeft(2, '0');
+    final String bStr = (b * 255).toInt().toRadixString(16).padLeft(2, '0');
+    return '$rStr$gStr$bStr'.toUpperCase();
   }
 
   /// Converts the color to a Hex string in the format #RRGGBB.
@@ -24,12 +24,12 @@ extension CompactColorPickerColorUtils on Color {
   ///
   /// Example: `Colors.red.withOpacity(0.5).toHexAlpha()` returns `'80FF0000'`.
   String toHexAlpha() {
-    // Construct hex string from A, R, G, B components using .alpha, .red, .green, .blue
-    final String a = alpha.toRadixString(16).padLeft(2, '0');
-    final String r = red.toRadixString(16).padLeft(2, '0');
-    final String g = green.toRadixString(16).padLeft(2, '0');
-    final String b = blue.toRadixString(16).padLeft(2, '0');
-    return '$a$r$g$b'.toUpperCase();
+    // Construct hex string from A, R, G, B components using .a, .r, .g, .b
+    final String aStr = (a * 255).toInt().toRadixString(16).padLeft(2, '0');
+    final String rStr = (r * 255).toInt().toRadixString(16).padLeft(2, '0');
+    final String gStr = (g * 255).toInt().toRadixString(16).padLeft(2, '0');
+    final String bStr = (b * 255).toInt().toRadixString(16).padLeft(2, '0');
+    return '$aStr$rStr$gStr$bStr'.toUpperCase();
   }
 
   /// Converts the color to a Hex string including alpha, in the format #AARRGGBB.

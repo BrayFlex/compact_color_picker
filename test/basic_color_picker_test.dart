@@ -1,4 +1,5 @@
 import 'package:compact_color_picker/compact_color_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -25,7 +26,7 @@ void main() {
         ),
       ),
     );
-
+    if (kDebugMode) print(selectedColor.toString());
     // Verify the picker is displayed
     expect(find.byType(ColorPicker), findsOneWidget);
 

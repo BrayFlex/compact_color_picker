@@ -1,5 +1,4 @@
 import 'package:compact_color_picker/compact_color_picker.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'hue_slider.dart';
@@ -19,13 +18,14 @@ class ColorPicker extends StatefulWidget {
     Key? key,
     this.initialColor = _defaultInitialColor, // Make optional and provide default
     this.onColorChanged,
-    this.showHexCode = false
+    this.showHexCode = false,
+    this.showOpacity = true, // Add showOpacity field
   }) : super(key: key);
 
   final Color initialColor;
   final ColorChangedCallback? onColorChanged;
-
   final bool showHexCode;
+  final bool showOpacity; // Declare showOpacity field
 
   @override
   State<ColorPicker> createState() => _ColorPicker();
@@ -34,12 +34,14 @@ class ColorPicker extends StatefulWidget {
 class _ColorPicker extends State<ColorPicker> {
   late HSVColor _hsvColor;
   late bool _showHexCode;
+  late bool _showOpacity; // Add state variable for showOpacity
 
   @override
   void initState() {
     super.initState();
     _hsvColor = HSVColor.fromColor(widget.initialColor);
     _showHexCode = widget.showHexCode;
+    _showOpacity = widget.showOpacity; // Initialize state variable
   }
 
   @override
@@ -47,10 +49,17 @@ class _ColorPicker extends State<ColorPicker> {
     return Column(children: [
       _buildHueSlider(),
       Expanded(child: _buildLightnessAndSaturationPicker()),
-      Row(children: [
-        Expanded(child: _buildOpacitySlider()),
-        _buildColorDisplay(),
-      ],),
+      // Conditionally build the bottom row based on showOpacity
+      if (_showOpacity)
+        Row(children: [
+          Expanded(child: _buildOpacitySlider()),
+          _buildColorDisplay(),
+        ])
+      else
+        // If opacity is hidden, show only the color display, expanded
+        Row(children: [
+          Expanded(child: _buildColorDisplay()),
+        ]),
     ]);
   }
 
@@ -101,12 +110,20 @@ class _ColorPicker extends State<ColorPicker> {
 
 
   Widget _buildColorDisplay() {
-    return Container(height: 40, width: 150, 
-    // color: _hsvColor.toColor(),
-    decoration: BoxDecoration(
-      color: _hsvColor.toColor(), 
-      borderRadius: const BorderRadius.only(bottomRight: Radius.circular(5))
-      ),
+    // Adjust width and border radius based on whether opacity slider is shown
+    final double displayWidth = _showOpacity ? 150 : double.infinity;
+    final BorderRadius borderRadius = _showOpacity
+        ? const BorderRadius.only(bottomRight: Radius.circular(5))
+        : const BorderRadius.only(
+            bottomRight: Radius.circular(5), bottomLeft: Radius.circular(5));
+
+    return Container(
+        height: 40,
+        width: displayWidth,
+        decoration: BoxDecoration(
+          color: _hsvColor.toColor(),
+          borderRadius: borderRadius, // Use dynamic border radius
+        ),
         child: Center(
           child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 7),

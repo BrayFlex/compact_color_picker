@@ -68,6 +68,8 @@ class _ExamplePageState extends State<ExamplePage> {
               height: 375, // Example height (maintaining ~4:5 ratio)
               child: ColorPicker(
                 initialColor: _selectedColor,
+                showHexCode: false,
+                showOpacity: true,
                 onColorChanged: _handleColorChanged, // Use the new callback
               ),
             ),

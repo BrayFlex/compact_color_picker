@@ -1,3 +1,10 @@
+## 1.0.2
+
+*   **Feature:** Added optional `showOpacity` parameter to `ColorPicker` (defaults to `true`). Allows hiding the opacity slider and expands the color display.
+*   **Docs:** Updated `README.md` example to demonstrate the new `showOpacity` feature.
+*   **Doc Fix** Updated the `pubspec.yaml` to confine to Dart file convention description restrictions.
+*   **Fix:** Updated `Color` extension methods (`toHex`, `toHexAlpha`) to use the non-deprecated `r`, `g`, `b`, `a` properties instead of `red`, `green`, `blue`, `alpha`.
+
 ## 1.0.1
 
 *   **Docs** Updated the documentation with images and improved missing descriptions. 🦜
