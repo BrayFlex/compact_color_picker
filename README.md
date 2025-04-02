@@ -2,20 +2,19 @@
 
 [![pub package](https://img.shields.io/pub/v/compact_color_picker.svg)](https://pub.dev/packages/compact_color_picker)
 
-A simple & clean color picker widget for Flutter. Designed to be compact (mobile-first) yet powerful, suitable for all platforms! It provides a user-friendly interface for selecting colors via Hue, Saturation, Lightness, and Opacity controls.
-
-Inspired by modern color selection tools, it aims to fit seamlessly into various UI layouts without taking up excessive space.
+A simple & clean color picker widget with opacity for Flutter. Designed to be powerful yet compact (mobile-first), suitable for all platforms! Providing a compact user-friendly interface for selecting colors via Hue, Saturation, Lightness, and Opacity controls.
 
 **Features:**
 
-*   Compact design ideal for mobile and desktop layouts.
+*   Compact design will never overflow, ideal for mobile or desktop layouts. 
 *   Hue, Saturation, Lightness, and Opacity sliders.
-*   Interactive preview bubble shows the color directly under the user's touch point during selection.
-*   Optional Hex code display.
+*   Interactive preview bubble ensures users can see the color when tapping during selection.
+*   Optional Opacity Selector.
+*   Optional built-in Hex code display.
 *   Provides selected color via a standard `Color` object callback.
 *   Includes utility extensions for easy conversion to Hex strings (`#RRGGBB`, `#AARRGGBB`).
 *   Customizable initial color.
-*   Rounded corner styling options.
+*   Simple styling that fits in any application.
 
 <img src="https://raw.githubusercontent.com/brayflex/compact_color_picker/main/assets/compact_color_picker.gif" alt="Compact Color Picker in Action">
 
@@ -26,7 +25,7 @@ Inspired by modern color selection tools, it aims to fit seamlessly into various
 
     ```yaml
     dependencies:
-      compact_color_picker: ^[latest_version] # Replace with the latest version
+      compact_color_picker: ^1.0.2 
     ```
 
 2.  **Install:**
@@ -84,6 +83,7 @@ class _MyColorSelectorState extends State<MyColorSelector> {
             initialColor: _currentColor,
             onColorChanged: _handleColorChanged,
             showHexCode: true, // Optionally display the hex code
+            showOpacity: false, // Optionally hide the opacity slider
           ),
         ),
         const SizedBox(height: 16),
@@ -132,8 +132,6 @@ void _handleColorChanged(Color color) {
   print('HSV: (${hsv.hue.toStringAsFixed(1)}, ${hsv.saturation.toStringAsFixed(2)}, ${hsv.value.toStringAsFixed(2)})');
 }
 ```
-
-You can also easily convert between `Color`, `HSVColor`, and `HSLColor` using Flutter's built-in methods: (This part seems redundant now, removing)
 
 ## 💖 Credit
 

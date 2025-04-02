@@ -71,10 +71,8 @@ class _HueSliderState extends State<HueSlider> {
       builder: (context) => _buildPreviewBubbleWidget(),
     );
     // Explicit null check for OverlayState
-    final OverlayState? overlayState = Overlay.of(context);
-    if (overlayState != null) {
+    final OverlayState overlayState = Overlay.of(context);
       overlayState.insert(_previewBubbleOverlay!);
-    }
   }
 
   void _updatePreviewBubble() {
